@@ -37,7 +37,7 @@ def update_varbits(gameval_dir: str, output_filename: str) -> None:
             data[enum_value] = enum_name
 
     with open(output_path, "w+") as fh:
-        fh.write(json.dumps(data))
+        fh.write(json.dumps(data, indent=4))
 
 
 def update_varps(gameval_dir: str, output_filename: str) -> None:
@@ -54,7 +54,7 @@ def update_varps(gameval_dir: str, output_filename: str) -> None:
             data[enum_value] = enum_name
 
         with open(output_path, "w+") as fh:
-            fh.write(json.dumps(data))
+            fh.write(json.dumps(data, indent=4))
 
 
 def main() -> None:
