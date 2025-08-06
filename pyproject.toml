@@ -1,0 +1,11 @@
+[project]
+name = "alc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "java-ast>=1.0.2",
+    "pystatx>=0.1",
+    "toml>=0.10.2",
+]
