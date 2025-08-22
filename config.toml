@@ -65,6 +65,7 @@ filtered_varbits = [
     8061, # varbit PURGEIGNORED_STATUS
 
 
+    13027, # varbit COMBATLEVEL_TRANSMIT
 
 ]
 
@@ -146,9 +147,21 @@ filtered_varps = [
     23, # varp MUSICMULTI_4
     24, # varp MUSICMULTI_5
     25, # varp MUSICMULTI_6
+    298, # varp MUSICMULTI_7
+    311, # varp MUSICMULTI_8
+    346, # varp MUSICMULTI_9
+    464, # varp MUSICMULTI_11
+    721, # varp MUSICMULTI_14
+    2237, # varp MUSICMULTI_20
+    2950, # varp MUSICMULTI_21
+
+
+
 
 
     173, # varp OPTION_RUN
+
+    168, # varp OPTION_MUSIC
 
 
 ]
