@@ -81,8 +81,8 @@ def parse_log_line(line: str) -> Union[VarChange, Dialogue, InventoryChange, dic
         data = parsed_line["data"]
         last_interacted_position = None
         if "lastInteractedPosition" in data:
-            last_interacted_position = (
-                AbsolutePosition.from_obj(data["lastInteractedPosition"]),
+            last_interacted_position = AbsolutePosition.from_obj(
+                data["lastInteractedPosition"]
             )
         return Dialogue(
             event_type="started" if line_type == "DIALOGUE_STARTED" else "ended",
