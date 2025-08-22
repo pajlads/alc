@@ -62,7 +62,25 @@ class Dialogue:
     dialogue_option_chosen: int
 
 
-def parse_log_line(line: str) -> Union[VarChange, Dialogue, InventoryChange, dict]:
+@dataclass
+class AnimationPlayerChanged:
+    tick: int
+    ts: str
+
+    animation: int
+    pose_animation: int
+    old_animation: int
+    old_pose_animation: int
+    player_position: AbsolutePosition
+    interaction_id: int
+    interaction_menu_option: str
+    interaction_menu_target: str
+    interaction_position: AbsolutePosition | None
+
+
+def parse_log_line(
+    line: str,
+) -> Union[VarChange, Dialogue, InventoryChange, AnimationPlayerChanged, dict]:
     parsed_line = json.loads(line)
     line_type = parsed_line["type"]
 
@@ -108,6 +126,29 @@ def parse_log_line(line: str) -> Union[VarChange, Dialogue, InventoryChange, dic
             old_quantities=data["oldQuantities"],
             new_inventory=data["newInventory"],
             new_quantities=data["newQuantities"],
+        )
+
+    if line_type == "ANIMATION_PLAYER_CHANGED":
+        data = parsed_line["data"]
+
+        interaction_position = None
+        if "interactionPosition" in data:
+            interaction_position = AbsolutePosition.from_obj(
+                data["interactionPosition"]
+            )
+
+        return AnimationPlayerChanged(
+            tick=parsed_line["tick"],
+            ts=parsed_line["ts"],
+            animation=data["animation"],
+            pose_animation=data["poseAnimation"],
+            old_animation=data["oldAnimation"],
+            old_pose_animation=data["oldPoseAnimation"],
+            player_position=AbsolutePosition.from_obj(data["playerPosition"]),
+            interaction_id=data["interactionId"],
+            interaction_menu_option=data.get("interactionMenuOption", ""),
+            interaction_menu_target=data.get("interactionMenuTarget", ""),
+            interaction_position=interaction_position,
         )
 
     return {
@@ -171,6 +212,10 @@ def main() -> None:
     if not show_dialogue_events:
         print(" + Hiding dialogue events")
 
+    show_animation_changes = tail_config.get("show_animation_changes", True)
+    if not show_animation_changes:
+        print(" + Hiding animation changes")
+
     filtered_varbits: set[int] = set(tail_config.get("filtered_varbits", []))
     filtered_varps: set[int] = set(tail_config.get("filtered_varps", []))
 
@@ -206,6 +251,12 @@ def main() -> None:
                 if not show_inventory_changes:
                     continue
                 print(f"[{d.ts} {d.tick}] inventory change: {d}")
+
+            case AnimationPlayerChanged():
+                if not show_animation_changes:
+                    continue
+                # TODO: make prettier
+                print(f"[{d.ts} {d.tick}] animation change: {d}")
 
             case dict():
                 print(f"unhandled event: {d}")
