@@ -68,6 +68,15 @@ filtered_varbits = [
 
     13027, # varbit COMBATLEVEL_TRANSMIT
 
+    13071, # varbit SIDE_CHANNELS_TAB_SELECTED
+
+    12169, # varbit CLAN_TRANSMIT_GUEST_TIMEOUT
+    13128, # varbit CLAN_GUEST_AFFINITY_JOINED
+    12168, # varbit CLAN_TRANSMIT_GUEST_HOMEWORLD
+    12169, # varbit CLAN_TRANSMIT_GUEST_TIMEOUT
+
+    13093, # varbit XPTRACKER_STRENGTH_MULTIPLIER
+    13095, # varbit XPTRACKER_HITPOINTS_MULTIPLIER
 ]
 
 filtered_varps = [
@@ -151,6 +160,7 @@ filtered_varps = [
     298, # varp MUSICMULTI_7
     311, # varp MUSICMULTI_8
     346, # varp MUSICMULTI_9
+    414, # varp MUSICMULTI_10
     464, # varp MUSICMULTI_11
     721, # varp MUSICMULTI_14
     2237, # varp MUSICMULTI_20
