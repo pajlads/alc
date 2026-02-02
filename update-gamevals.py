@@ -57,6 +57,23 @@ def update_varps(gameval_dir: str, output_filename: str) -> None:
             fh.write(json.dumps(data, indent=4))
 
 
+def update_items(gameval_dir: str, output_filename: str) -> None:
+    output_path = path.join("data", output_filename)
+    print(f"Writing ItemID gamevals to {output_path}")
+
+    data: dict[str, str] = {}
+
+    with open(path.join(gameval_dir, "ItemID.java")) as fh:
+        tree = jast.parse(fh.read())
+        visitor = NameVisitor()
+        enum_map = visitor.visit(tree)
+        for enum_name, enum_value in batched(enum_map, n=2):
+            data[enum_value] = enum_name
+
+        with open(output_path, "w+") as fh:
+            fh.write(json.dumps(data, indent=4))
+
+
 def main() -> None:
     config = toml.load("config.toml")
 
@@ -76,6 +93,7 @@ def main() -> None:
 
     update_varbits(gameval_dir, "gameval_varbits.json")
     update_varps(gameval_dir, "gameval_varps.json")
+    update_items(gameval_dir, "gameval_items.json")
 
 
 if __name__ == "__main__":
