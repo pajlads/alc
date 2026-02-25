@@ -308,5 +308,6 @@ filtered_varps = [
     3079, # varp MAP_CLOCK
 
     888, # varp SLUG2_REGIONUID
+    3883, # varp MUSIC_CURRENT_TRACK
 ]
 
