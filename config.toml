@@ -159,6 +159,8 @@ filtered_varbits = [
     12393, # varbit BUSY
 
     3958, # varbit BANK_WITHDRAWNOTES
+
+    6348, # varbit SHOP_QUANTITY
 ]
 
 filtered_varps = [
