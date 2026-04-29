@@ -161,17 +161,32 @@ filtered_varbits = [
     3958, # varbit BANK_WITHDRAWNOTES
 
     6348, # varbit SHOP_QUANTITY
+
+    4775, # varbit FARMING_TRANSMIT_E
+    4962, # varbit FARMING_TRANSMIT_E2
+    4774, # varbit FARMING_TRANSMIT_D
+    4959, # varbit FARMING_TRANSMIT_D1
+    4960, # varbit FARMING_TRANSMIT_D2
+    4772, # varbit FARMING_TRANSMIT_B
+    4955, # varbit FARMING_TRANSMIT_B1
+    4956, # varbit FARMING_TRANSMIT_B2
+
+    4101, # varbit PRAYER_ALLACTIVE
+    4116, # varbit PRAYER_PROTECTFROMMAGIC
+    4101, # varbit PRAYER_ALLACTIVE
+    4116, # varbit PRAYER_PROTECTFROMMAGIC
+    4101, # varbit PRAYER_ALLACTIVE
+    4116, # varbit PRAYER_PROTECTFROMMAGIC
+    4101, # varbit PRAYER_ALLACTIVE
+    4116, # varbit PRAYER_PROTECTFROMMAGIC
 ]
 
 filtered_varps = [
     1683, # varp HPBAR_HUD_NPC
-    4066, # varp MUSICMULTI_24
-    662, # varp MUSICMULTI_13
     4720, # varp AUTOCAST_SPELL_OBJ
     4725, # varp GE_LAST_OFFER_ITEM
     4731, # varp LOGIN_TIME
 
-    4411, # varp MUSICMULTI_25
 
 
     43, # varp COM_MODE
@@ -246,11 +261,15 @@ filtered_varps = [
     346, # varp MUSICMULTI_9
     414, # varp MUSICMULTI_10
     464, # varp MUSICMULTI_11
+    662, # varp MUSICMULTI_13
     721, # varp MUSICMULTI_14
+    906, # varp MUSICMULTI_15
     1009, # varp MUSICMULTI_16
     2237, # varp MUSICMULTI_20
     2950, # varp MUSICMULTI_21
     3418, # varp MUSICMULTI_22
+    4066, # varp MUSICMULTI_24
+    4411, # varp MUSICMULTI_25
     4944, # varp MUSICMULTI_26
 
 
