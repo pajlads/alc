@@ -15,4 +15,12 @@ uv run tail.py
 
 ## Updating the gamevals
 
-TODO
+```bash
+uv run update-gamevals.py
+```
+
+You can set the `RUNELITE_DIR` environment variable to override where to find the [RuneLite](https://github.com/runelite/runelite) repository:
+
+```bash
+RUNELITE_DIR=/path/to/runelite uv run update-gamevals.py
+```

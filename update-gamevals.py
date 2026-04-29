@@ -1,3 +1,4 @@
+import os
 from os import path
 from typing import Any
 import toml
@@ -74,10 +75,13 @@ def update_items(gameval_dir: str, output_filename: str) -> None:
             fh.write(json.dumps(data, indent=4))
 
 
-def main() -> None:
+def get_runelite_dir() -> str:
     config = toml.load("config.toml")
+    return expanduser(os.getenv("RUNELITE_DIR", config.get("runelite_dir", "~/git/runelite")))
 
-    runelite_dir = expanduser(config.get("runelite_dir", "~/git/runelite"))
+
+def main() -> None:
+    runelite_dir = get_runelite_dir()
 
     gameval_dir = path.join(
         runelite_dir,
