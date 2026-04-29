@@ -25,11 +25,11 @@ jobs:
         with:
           repository: runelite/runelite
           ref: master
-          path: runelite
+          path: .ci-runelite
 
       - name: Update gamevals
         env:
-          RUNELITE_DIR: "${{ github.workspace }}/runelite"
+          RUNELITE_DIR: "${{ github.workspace }}/.ci-runelite"
         run: |
           uv run update-gamevals.py
 
