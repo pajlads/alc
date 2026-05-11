@@ -268,6 +268,7 @@ filtered_varps = [
     2237, # varp MUSICMULTI_20
     2950, # varp MUSICMULTI_21
     3418, # varp MUSICMULTI_22
+    3575, # varp MUSICMULTI_23
     4066, # varp MUSICMULTI_24
     4411, # varp MUSICMULTI_25
     4944, # varp MUSICMULTI_26
