@@ -185,10 +185,15 @@ def find_newest_file(log_dir: str) -> str:
 def tail(file_path: str) -> Generator[str, None, None]:
     with open(file_path) as fh:
         # fh.seek(0, 2)
+        pending = ""
         while True:
-            line = fh.readline()
-            if line:
-                yield line.rstrip("\n")
+            chunk = fh.read(4096)
+            if chunk:
+                pending += chunk
+                lines = pending.split("\n")
+                pending = lines.pop()
+                for line in lines:
+                    yield line
             else:
                 time.sleep(0.1)
 
