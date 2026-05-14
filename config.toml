@@ -34,6 +34,8 @@ filtered_varbits = [
     11554, # varbit OSM_HOTKEY_LOADOUT3_4
     357, # varbit COMBAT_WEAPON_CATEGORY
 
+    13094, # varbit XPTRACKER_DEFENCE_MULTIPLIER
+
     12427, # varbit OPTION_SOUNDS_SAVED
 
 
@@ -179,9 +181,12 @@ filtered_varbits = [
     4116, # varbit PRAYER_PROTECTFROMMAGIC
     4101, # varbit PRAYER_ALLACTIVE
     4116, # varbit PRAYER_PROTECTFROMMAGIC
+
+    13092, # varbit XPTRACKER_ATTACK_MULTIPLIER
 ]
 
 filtered_varps = [
+    5535, # varp LAST_NPC_TARGET_DISTANCE
     1683, # varp HPBAR_HUD_NPC
     4720, # varp AUTOCAST_SPELL_OBJ
     4725, # varp GE_LAST_OFFER_ITEM
