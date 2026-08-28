@@ -78,9 +78,19 @@ class AnimationPlayerChanged:
     interaction_position: AbsolutePosition | None
 
 
+@dataclass
+class ChatEvent:
+    tick: int
+    ts: str
+
+    type: str
+    name: str
+    message: str
+
+
 def parse_log_line(
     line: str,
-) -> Union[VarChange, Dialogue, InventoryChange, AnimationPlayerChanged, dict]:
+) -> VarChange | Dialogue | InventoryChange | AnimationPlayerChanged | ChatEvent | dict:
     parsed_line = json.loads(line)
     line_type = parsed_line["type"]
 
@@ -149,6 +159,17 @@ def parse_log_line(
             interaction_menu_option=data.get("interactionMenuOption", ""),
             interaction_menu_target=data.get("interactionMenuTarget", ""),
             interaction_position=interaction_position,
+        )
+
+    if line_type == "CHAT":
+        data = parsed_line["data"]
+
+        return ChatEvent(
+            tick=parsed_line["tick"],
+            ts=parsed_line["ts"],
+            type=data["type"],
+            name=data["name"],
+            message=data["message"],
         )
 
     return {
@@ -221,6 +242,10 @@ def main() -> None:
     if not show_animation_changes:
         print(" + Hiding animation changes")
 
+    show_chat_events = tail_config.get("show_chat_events", True)
+    if not show_chat_events:
+        print(" + Hiding chat events")
+
     filtered_varbits: set[int] = set(tail_config.get("filtered_varbits", []))
     filtered_varps: set[int] = set(tail_config.get("filtered_varps", []))
 
@@ -262,6 +287,11 @@ def main() -> None:
                     continue
                 # TODO: make prettier
                 print(f"[{d.ts} {d.tick}] animation change: {d}")
+
+            case ChatEvent():
+                if not show_chat_events:
+                    continue
+                print(f"[{d.ts} {d.tick}] chat {d.type}: {d.message} ({d.name})")
 
             case dict():
                 print(f"unhandled event: {d}")

@@ -8,6 +8,8 @@
 show_inventory_changes = false
 show_dialogue_events = false
 show_animation_changes = false
+# show_chat_events = true
+show_chat_events = false
 
 filtered_varbits = [
     8354, # varbit CLOCK
