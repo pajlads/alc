@@ -14,18 +14,21 @@ jobs:
     if: ${{ github.repository_owner == 'pajlads' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
 
       - name: Install dependencies
         run: uv sync --frozen
 
       - name: Check out RuneLite master
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           repository: runelite/runelite
           ref: master
           path: .ci-runelite
+          persist-credentials: false
 
       - name: Update gamevals
         env:
@@ -38,7 +41,7 @@ jobs:
         run: echo "date=$(date +'%Y-%m')" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           commit-message: "chore: update gamevals (${{ steps.date.outputs.date }})"
           title: "chore: update gamevals (${{ steps.date.outputs.date }})"
