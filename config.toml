@@ -291,6 +291,22 @@ filtered_varbits = [
     8429, # varbit DIVINEATTACK_POTION_TIME
 
     15489, # varbit CASTLE_DRAKAN_WORLD_MAP_FLOOR
+    11361, # varbit PRAYER_REGENERATION_POTION_TIMER
+    4150, # varbit BANK_CURRENTTAB
+    6670, # varbit POH_NEXUS_ID
+    6669, # varbit POH_NEXUS_LEFT_CLICK_TEMP
+    6672, # varbit POH_NEXUS_TELE_1_TEMP
+    6673, # varbit POH_NEXUS_TELE_2_TEMP
+    6674, # varbit POH_NEXUS_TELE_3_TEMP
+    6675, # varbit POH_NEXUS_TELE_4_TEMP
+    6676, # varbit POH_NEXUS_TELE_5_TEMP
+    6677, # varbit POH_NEXUS_TELE_6_TEMP
+    6678, # varbit POH_NEXUS_TELE_7_TEMP
+    6679, # varbit POH_NEXUS_TELE_8_TEMP
+    6680, # varbit POH_NEXUS_TELE_9_TEMP
+    6681, # varbit POH_NEXUS_TELE_10_TEMP
+    6682, # varbit POH_NEXUS_TELE_11_TEMP
+    4103, # varbit QUICKPRAYER_ACTIVE
 ]
 
 filtered_varps = [
@@ -451,5 +467,8 @@ filtered_varps = [
     5589, # varp option_areasounds_override
     817, # varp FAIRYRING_DESTINATION1
     300, # varp SA_ENERGY
+    3885, # varp MUSIC_LAST_TRACK
+
+    301, # varp SA_ATTACK
 ]
 
