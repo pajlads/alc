@@ -199,7 +199,9 @@ def find_newest_file(log_dir: str) -> str:
             f"No Action Logger files found in {log_dir} (pattern: {pattern})"
         )
 
-    newest_file = max(files, key=lambda x: statx.statx(x).btime)
+    newest_file = max(files, key=lambda x: (os.stat(x).st_birthtime
+                                            if os.name == "nt"
+                                            else statx.statx(x).btime))
     return newest_file
 
 
