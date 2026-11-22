@@ -177,12 +177,8 @@ filtered_varbits = [
 
     4101, # varbit PRAYER_ALLACTIVE
     4116, # varbit PRAYER_PROTECTFROMMAGIC
-    4101, # varbit PRAYER_ALLACTIVE
-    4116, # varbit PRAYER_PROTECTFROMMAGIC
-    4101, # varbit PRAYER_ALLACTIVE
-    4116, # varbit PRAYER_PROTECTFROMMAGIC
-    4101, # varbit PRAYER_ALLACTIVE
-    4116, # varbit PRAYER_PROTECTFROMMAGIC
+    4120, # varbit PRAYER_REDEMPTION
+    4117, # varbit PRAYER_PROTECTFROMMISSILES
 
     13092, # varbit XPTRACKER_ATTACK_MULTIPLIER
     19118, # varbit SAILING_PRELOADED_ANIMS
@@ -309,6 +305,34 @@ filtered_varbits = [
     6681, # varbit POH_NEXUS_TELE_10_TEMP
     6682, # varbit POH_NEXUS_TELE_11_TEMP
     4103, # varbit QUICKPRAYER_ACTIVE
+
+    16741, # varbit LAST_QUEST_ID
+
+    4961, # varbit FARMING_TRANSMIT_E1
+    7908, # varbit FARMING_TRANSMIT_J
+    7907, # varbit FARMING_TRANSMIT_I
+    7906, # varbit FARMING_TRANSMIT_H
+    7905, # varbit FARMING_TRANSMIT_G
+    4963, # varbit FARMING_TRANSMIT_F1
+    4964, # varbit FARMING_TRANSMIT_F2
+    7904, # varbit FARMING_TRANSMIT_F
+    7911, # varbit FARMING_TRANSMIT_M
+    7910, # varbit FARMING_TRANSMIT_L
+    7909, # varbit FARMING_TRANSMIT_K
+    4961, # varbit FARMING_TRANSMIT_E1
+    7908, # varbit FARMING_TRANSMIT_J
+    7907, # varbit FARMING_TRANSMIT_I
+    7906, # varbit FARMING_TRANSMIT_H
+    7905, # varbit FARMING_TRANSMIT_G
+    4963, # varbit FARMING_TRANSMIT_F1
+    4964, # varbit FARMING_TRANSMIT_F2
+    7904, # varbit FARMING_TRANSMIT_F
+    7911, # varbit FARMING_TRANSMIT_M
+    7910, # varbit FARMING_TRANSMIT_L
+    7909, # varbit FARMING_TRANSMIT_K
+    16387, # varbit TFA_CLIENT_P0
+    16388, # varbit TFA_CLIENT_P1
+    16389, # varbit TFA_CLIENT_P2
 ]
 
 filtered_varps = [
@@ -472,5 +496,7 @@ filtered_varps = [
     3885, # varp MUSIC_LAST_TRACK
 
     301, # varp SA_ATTACK
+
+    5913, # varp TFA_MYCONTROLLER
 ]
 
