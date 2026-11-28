@@ -333,6 +333,14 @@ filtered_varbits = [
     16387, # varbit TFA_CLIENT_P0
     16388, # varbit TFA_CLIENT_P1
     16389, # varbit TFA_CLIENT_P2
+
+    13091, # varbit XPTRACKER_RANGED_MULTIPLIER
+
+    4173, # varbit BANK_TAB_3
+    4173, # varbit BANK_TAB_3
+    4177, # varbit BANK_TAB_7
+
+    4119, # varbit PRAYER_RETRIBUTION
 ]
 
 filtered_varps = [
@@ -498,5 +506,6 @@ filtered_varps = [
     301, # varp SA_ATTACK
 
     5913, # varp TFA_MYCONTROLLER
-]
 
+    3796, # varp OPTION_MASTER_VOLUME
+]
